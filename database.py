@@ -1,6 +1,12 @@
+from pathlib import Path
+
 import aiosqlite
 
-DB_PATH = "data/kairo.db"
+
+DATA_DIR = Path("data")
+DATA_DIR.mkdir(parents=True, exist_ok=True)
+
+DB_PATH = str(DATA_DIR / "kairo.db")
 
 
 async def init_db():
